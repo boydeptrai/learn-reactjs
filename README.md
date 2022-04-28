@@ -68,3 +68,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### folder Structure
+```  
+  |__Components(shared components between features)
+  |  |__Loading
+  |     |__index.jsx
+  |     |__styles.scss
+  |
+  |__Features
+  |  |__components(components of feature Todo)
+  |  |__pages(pages of feature Todo)
+  |  |__index.jsx(entry point of feature Todo)
+  |
+  |__App.js
+
+```
