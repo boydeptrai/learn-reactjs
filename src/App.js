@@ -1,26 +1,40 @@
 import logo from './logo.svg';
-import React from 'react';
+import React, { useEffect } from 'react';
 // import './App.css';
-import {Link, Route,NavLink } from 'react-router-dom';
+import {Switch, Redirect,  Route, NavLink } from 'react-router-dom';
 import TodoFeature from './features/Todo/pages';
 import AlbumFeature from './features/Album/pages';
+import NotFound from './components/NotFound';
+import productApi from './api/productApi';
 
 
 
 function App() {
+  useEffect(() =>{
+    const fetchProducts = async () =>{
+      const params ={
+        _limit:10,
+      }
+    const productList = await productApi.getAll(params)
+    console.log(productList)
+    };
+    fetchProducts();
+
+  },[])
   return (
     <div className="App">
-     Header
-      <p><Link to="/todos">Todos</Link></p>
-      <p><Link to="/albums">Albums</Link></p>
-
+      Header
       <p><NavLink to="/todos">Todos</NavLink></p>
       <p><NavLink to="/albums">Albums</NavLink></p>
-      
-      <Route path="/todos" component ={TodoFeature}/>
-      <Route path="/albums" component ={AlbumFeature}/>
-      
-     Footer
+      <Switch>
+        <Redirect from="/home" to="/" exact/>
+        <Redirect from="/post-list/:postId" to="/posts/:postId" exact/>
+
+        <Route path="/todos" component={TodoFeature} />
+        <Route path="/albums" component={AlbumFeature} />
+        <Route component={NotFound}/>
+      </Switch>
+      Footer
     </div>
   );
 }
