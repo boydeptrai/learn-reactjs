@@ -7,6 +7,7 @@ import AlbumFeature from './features/Album/pages';
 import NotFound from './components/NotFound';
 import productApi from './api/productApi';
 import CounterFeature from './features/Counter';
+import Header from 'components/Header';
 
 
 
@@ -24,7 +25,7 @@ function App() {
   },[])
   return (
     <div className="App">
-      Header
+      <Header />
       <p><NavLink to="/todos">Todos</NavLink></p>
       <p><NavLink to="/albums">Albums</NavLink></p>
       <Switch>
