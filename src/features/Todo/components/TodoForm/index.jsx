@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from "yup";
-import InputField from '../../../../components/form-controls';
+import InputField from 'components/form-controls'
+// import InputField from '../../../../components/form-controls';
 import TodoList from '../TodoList';
 
 TodoForm.propTypes = {
@@ -33,7 +34,7 @@ function TodoForm(props) {
     return (
         <form onSubmit={form.handleSubmit(handleSubmit)}>
             Todo Form
-            <InputField name="title" label="Todo" form={form}></InputField>
+            <InputField name="title" label="Todo" form={form} ></InputField>
         </form>
     );
 }

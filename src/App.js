@@ -6,6 +6,7 @@ import TodoFeature from './features/Todo/pages';
 import AlbumFeature from './features/Album/pages';
 import NotFound from './components/NotFound';
 import productApi from './api/productApi';
+import CounterFeature from './features/Counter';
 
 
 
@@ -30,8 +31,10 @@ function App() {
         <Redirect from="/home" to="/" exact/>
         <Redirect from="/post-list/:postId" to="/posts/:postId" exact/>
 
+        <Route path="/" component={CounterFeature} />
         <Route path="/todos" component={TodoFeature} />
         <Route path="/albums" component={AlbumFeature} />
+
         <Route component={NotFound}/>
       </Switch>
       Footer
