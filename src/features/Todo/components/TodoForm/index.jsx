@@ -1,11 +1,9 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import InputField from 'components/form-controls';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from "yup";
-import InputField from 'components/form-controls'
-// import InputField from '../../../../components/form-controls';
-import TodoList from '../TodoList';
 
 TodoForm.propTypes = {
     onSubmit: PropTypes.func,

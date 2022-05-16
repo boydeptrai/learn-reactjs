@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TextField } from '@mui/material';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 
 
 InputField.propTypes = {
@@ -27,7 +27,9 @@ function InputField(props) {
           label={label}
           disabled={disabled}
           fullWidth
-          
+          variant="outlined"
+          margin ="normal"
+
           name={name}
           error ={invalid}
           helperText={error?.message}
