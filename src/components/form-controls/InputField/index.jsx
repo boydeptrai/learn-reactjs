@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TextField } from '@mui/material';
+import { OutlinedInput, TextField } from '@mui/material';
 import { Controller } from 'react-hook-form';
 
 
@@ -26,6 +26,7 @@ function InputField(props) {
           <TextField
           label={label}
           disabled={disabled}
+
           fullWidth
           variant="outlined"
           margin ="normal"
