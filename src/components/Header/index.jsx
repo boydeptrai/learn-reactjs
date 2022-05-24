@@ -1,4 +1,5 @@
 import CodeIcon from '@mui/icons-material/Code';
+import { Modal } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -61,14 +62,23 @@ export default function Header() {
         </Toolbar>
       </AppBar>
 
-      <Dialog disableEscapeKeyDown onBackdropClick open={open} onClose={handleClose}>
+      <Dialog 
+      
+      disableEscapeKeyDown 
+      onBackdropClick open={open} 
+      
+      onClose={(_,reason) => {
+        if(reason !== "backdropClick"){
+          handleClose()
+        }
+      }}>
         <DialogContent>
           <Register />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
         </DialogActions>
-      </Dialog>
+        </Dialog>
     </div>
   );
 }

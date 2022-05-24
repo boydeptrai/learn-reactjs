@@ -22,6 +22,7 @@ function RegisterForm(props) {
       .test('should has at least two words', 'Please enter at least two words', (value) => {
         return value.split(' ').length >= 2;
       }),
+    email: yup.string().required('Please enter your email').email('Please enter an valid email address')
   });
   const form = useForm({
     defaultValues: {
