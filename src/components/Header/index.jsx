@@ -33,8 +33,20 @@ export default function Header() {
     setOpen(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
+  const handleClose = (_, reason) => {
+    if (reason === 'backdropClick') {
+      console.log(reason);
+    } else {
+      setOpen(false);
+    }
+  };
+  const handleBackdropClick = (event) => {
+    //these fail to keep the modal open
+    event.stopPropagation();
+    return false;
   };
 
   return (
@@ -65,13 +77,11 @@ export default function Header() {
       <Dialog 
       
       disableEscapeKeyDown 
-      onBackdropClick open={open} 
+      onBackdropClick ={handleBackdropClick}
+      open={open} 
       
-      onClose={(_,reason) => {
-        if(reason !== "backdropClick"){
-          handleClose()
-        }
-      }}>
+      onClose={handleClose}
+      >
         <DialogContent>
           <Register />
         </DialogContent>
